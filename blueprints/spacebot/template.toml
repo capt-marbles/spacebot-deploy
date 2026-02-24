@@ -1,0 +1,24 @@
+[variables]
+main_domain = "${domain}"
+anthropic_api_key = ""
+telegram_bot_token = ""
+hetzner_token = ""
+
+[config]
+
+[[config.domains]]
+serviceName = "spacebot"
+port = 3000
+host = "${main_domain}"
+
+[[config.env]]
+key = "ANTHROPIC_API_KEY"
+value = "${anthropic_api_key}"
+
+[[config.env]]
+key = "TELEGRAM_BOT_TOKEN"
+value = "${telegram_bot_token}"
+
+[[config.env]]
+key = "HETZNER_TOKEN"
+value = "${hetzner_token}"

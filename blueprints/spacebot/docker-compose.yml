@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  spacebot:
+    image: ghcr.io/capt-marbles/spacebot-deploy:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - ANTHROPIC_API_KEY=${anthropic_api_key}
+      - TELEGRAM_BOT_TOKEN=${telegram_bot_token}
+      - HETZNER_TOKEN=${hetzner_token}
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          memory: 512M
